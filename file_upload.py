@@ -2,7 +2,6 @@ import asyncio
 import time
 
 async def task_runner(name, delay, action_description):
-    """Универсальная асинхронная функция для имитации задачи."""
     start_time = time.time()
     print(f"[{time.strftime('%H:%M:%S', time.localtime(start_time))}] Начало {action_description}...")
     await asyncio.sleep(delay)
@@ -14,7 +13,6 @@ async def main():
     program_start_time = time.time()
     print(f"[{time.strftime('%H:%M:%S', time.localtime(program_start_time))}] Программа запущена.")
 
-    # Запускаем обе задачи одновременно
     download_task = task_runner("загрузки", 3, "загрузки файла")
     process_task = task_runner("обработки", 2, "обработки данных")
 
